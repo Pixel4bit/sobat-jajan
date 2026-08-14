@@ -83,9 +83,15 @@
   }
 
   /* Pola titik halus di background hero, menyerupai tabur wijen/gula */
+  /* 1. ANIMASI BACKGROUND: pola titik bergerak drift pelan, memberi kesan "hidup" tanpa mengganggu */
   .hero-pattern {
     background-image: radial-gradient(rgba(255,255,255,0.35) 1.5px, transparent 1.5px);
     background-size: 22px 22px;
+    animation: drift-bg 18s linear infinite;
+  }
+  @keyframes drift-bg {
+    from { background-position: 0 0; }
+    to   { background-position: 220px 220px; }
   }
 
   ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -100,13 +106,58 @@
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    .scroll-reveal { opacity: 1; transform: none; }
   }
 
   .fade-in { animation: fadeIn 0.4s ease-out both; }
   @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-</style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-5{bottom:1.25rem}.left-1\/2{left:50%}.left-4{left:1rem}.right-5{right:1.25rem}.top-1\/2{top:50%}.z-30{z-index:30}.z-50{z-index:50}.z-\[60\]{z-index:60}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.ml-auto{margin-left:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-9{height:2.25rem}.h-auto{height:auto}.min-h-0{min-height:0px}.min-h-full{min-height:100%}.w-10{width:2.5rem}.w-9{width:2.25rem}.w-full{width:100%}.w-12{width:3rem}.w-24{width:6rem}.w-5{width:1.25rem}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-\[280px\]{max-width:280px}.max-w-lg{max-width:32rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-4{gap:1rem}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-y{border-top-width:1px;border-bottom-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-cokelat\/10{border-color:rgb(61 40 23 / 0.1)}.border-cokelat\/15{border-color:rgb(61 40 23 / 0.15)}.border-cokelat\/5{border-color:rgb(61 40 23 / 0.05)}.border-krem\/10{border-color:rgb(255 248 240 / 0.1)}.border-merah\/30{border-color:rgb(192 57 43 / 0.3)}.border-white\/25{border-color:rgb(255 255 255 / 0.25)}.bg-cokelat{--tw-bg-opacity:1;background-color:rgb(61 40 23 / var(--tw-bg-opacity, 1))}.bg-cokelat\/5{background-color:rgb(61 40 23 / 0.05)}.bg-cokelat\/50{background-color:rgb(61 40 23 / 0.5)}.bg-hijau{--tw-bg-opacity:1;background-color:rgb(90 143 60 / var(--tw-bg-opacity, 1))}.bg-krem{--tw-bg-opacity:1;background-color:rgb(255 248 240 / var(--tw-bg-opacity, 1))}.bg-krem-dark{--tw-bg-opacity:1;background-color:rgb(251 237 224 / var(--tw-bg-opacity, 1))}.bg-kuning{--tw-bg-opacity:1;background-color:rgb(240 165 0 / var(--tw-bg-opacity, 1))}.bg-merah{--tw-bg-opacity:1;background-color:rgb(192 57 43 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-kuning{--tw-gradient-from:#F0A500 var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 165 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-merah{--tw-gradient-from:#C0392B var(--tw-gradient-from-position);--tw-gradient-to:rgb(192 57 43 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-merah{--tw-gradient-to:rgb(192 57 43 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #C0392B var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-kuning-dark{--tw-gradient-to:#C98600 var(--tw-gradient-to-position)}.to-merah-dark{--tw-gradient-to:#96291E var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-0{padding:0px}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-9{padding-top:2.25rem;padding-bottom:2.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pl-11{padding-left:2.75rem}.pl-4{padding-left:1rem}.pr-4{padding-right:1rem}.pr-5{padding-right:1.25rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.pt-1{padding-top:0.25rem}.pt-1\.5{padding-top:0.375rem}.text-center{text-align:center}.text-right{text-align:right}.font-display{font-family:Fredoka, sans-serif}.font-mono{font-family:JetBrains Mono, monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.08\]{line-height:1.08}.leading-relaxed{line-height:1.625}.leading-none{line-height:1}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-cokelat{--tw-text-opacity:1;color:rgb(61 40 23 / var(--tw-text-opacity, 1))}.text-cokelat\/40{color:rgb(61 40 23 / 0.4)}.text-cokelat\/50{color:rgb(61 40 23 / 0.5)}.text-cokelat\/60{color:rgb(61 40 23 / 0.6)}.text-cokelat\/70{color:rgb(61 40 23 / 0.7)}.text-krem{--tw-text-opacity:1;color:rgb(255 248 240 / var(--tw-text-opacity, 1))}.text-krem\/20{color:rgb(255 248 240 / 0.2)}.text-krem\/40{color:rgb(255 248 240 / 0.4)}.text-krem\/60{color:rgb(255 248 240 / 0.6)}.text-krem\/80{color:rgb(255 248 240 / 0.8)}.text-krem\/85{color:rgb(255 248 240 / 0.85)}.text-kuning{--tw-text-opacity:1;color:rgb(240 165 0 / var(--tw-text-opacity, 1))}.text-merah{--tw-text-opacity:1;color:rgb(192 57 43 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-cokelat\/45{color:rgb(61 40 23 / 0.45)}.text-hijau{--tw-text-opacity:1;color:rgb(90 143 60 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-cokelat\/40::placeholder{color:rgb(61 40 23 / 0.4)}.opacity-70{opacity:0.7}.shadow-card{--tw-shadow:0 4px 0 rgba(61,40,23,0.08), 0 8px 20px -6px rgba(61,40,23,0.12);--tw-shadow-colored:0 4px 0 var(--tw-shadow-color), 0 8px 20px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cardHover{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-cokelat\/5:hover{background-color:rgb(61 40 23 / 0.05)}.hover\:bg-cokelat\/90:hover{background-color:rgb(61 40 23 / 0.9)}.hover\:bg-krem:hover{--tw-bg-opacity:1;background-color:rgb(255 248 240 / var(--tw-bg-opacity, 1))}.hover\:bg-merah-dark:hover{--tw-bg-opacity:1;background-color:rgb(150 41 30 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:text-krem\/40:hover{color:rgb(255 248 240 / 0.4)}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:shadow-cardHover:hover{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:brightness-105:hover{--tw-brightness:brightness(1.05);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:border-merah:focus{--tw-border-opacity:1;border-color:rgb(192 57 43 / var(--tw-border-opacity, 1))}.focus\:shadow-cardHover:focus{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:mb-12{margin-bottom:3rem}.sm\:mb-14{margin-bottom:3.5rem}.sm\:mb-8{margin-bottom:2rem}.sm\:block{display:block}.sm\:inline-block{display:inline-block}.sm\:inline{display:inline}.sm\:inline-flex{display:inline-flex}.sm\:max-h-\[90vh\]{max-height:90vh}.sm\:min-h-0{min-height:0px}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:gap-6{gap:1.5rem}.sm\:rounded-3xl{border-radius:1.5rem}.sm\:p-6{padding:1.5rem}.sm\:p-8{padding:2rem}.sm\:p-5{padding:1.25rem}.sm\:px-10{padding-left:2.5rem;padding-right:2.5rem}.sm\:px-7{padding-left:1.75rem;padding-right:1.75rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\:pb-20{padding-bottom:5rem}.sm\:pt-10{padding-top:2.5rem}.sm\:pt-6{padding-top:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:gap-10{gap:2.5rem}}</style></head>
 
+  /* 2. ANIMASI SCROLL: elemen dengan class ini mulai tersembunyi & bergeser sedikit ke
+     bawah, lalu di-reveal (class "in-view" ditambahkan oleh IntersectionObserver di JS)
+     saat elemen memasuki viewport ketika discroll. */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Efek berjenjang (stagger) untuk grid produk, supaya kartu tidak muncul serentak kaku */
+  .scroll-reveal-stagger:nth-child(1) { transition-delay: 0ms; }
+  .scroll-reveal-stagger:nth-child(2) { transition-delay: 60ms; }
+  .scroll-reveal-stagger:nth-child(3) { transition-delay: 120ms; }
+  .scroll-reveal-stagger:nth-child(4) { transition-delay: 180ms; }
+  .scroll-reveal-stagger:nth-child(5) { transition-delay: 240ms; }
+  .scroll-reveal-stagger:nth-child(6) { transition-delay: 300ms; }
+  .scroll-reveal-stagger:nth-child(n+7) { transition-delay: 360ms; }
+
+  /* 3. ANIMASI SELECTION: micro-interaction saat memilih varian gramasi (chip) atau
+     menekan tombol qty +/-, memberi umpan balik visual instan bahwa tap "kena". */
+  .variant-chip { transition: transform 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out, color 0.15s ease-out; }
+  .variant-chip:active { transform: scale(0.94); }
+  .variant-chip.chip-selected-pulse { animation: chip-pulse 0.3s ease-out; }
+  @keyframes chip-pulse {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.08); }
+    100% { transform: scale(1); }
+  }
+
+  .qty-minus, .qty-plus { transition: transform 0.12s ease-out; }
+  .qty-minus:active, .qty-plus:active { transform: scale(0.88); }
+
+  .subtotal-label { transition: transform 0.2s ease-out; }
+  .subtotal-label.subtotal-bump { animation: subtotal-bump 0.25s ease-out; }
+  @keyframes subtotal-bump {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.12); }
+    100% { transform: scale(1); }
+  }
+</style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:JetBrains Mono, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-5{bottom:1.25rem}.left-1\/2{left:50%}.left-4{left:1rem}.right-5{right:1.25rem}.top-1\/2{top:50%}.z-30{z-index:30}.z-50{z-index:50}.z-\[60\]{z-index:60}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-10{margin-bottom:2.5rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.ml-auto{margin-left:auto}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-9{height:2.25rem}.h-auto{height:auto}.min-h-0{min-height:0px}.min-h-full{min-height:100%}.w-10{width:2.5rem}.w-9{width:2.25rem}.w-full{width:100%}.w-12{width:3rem}.w-24{width:6rem}.w-5{width:1.25rem}.min-w-\[4\.5rem\]{min-width:4.5rem}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-6xl{max-width:72rem}.max-w-\[280px\]{max-width:280px}.max-w-lg{max-width:32rem}.max-w-sm{max-width:24rem}.max-w-xl{max-width:36rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.resize-none{resize:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-4{gap:1rem}.space-y-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.375rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.375rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-nowrap{white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-y{border-top-width:1px;border-bottom-width:1px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-cokelat\/10{border-color:rgb(61 40 23 / 0.1)}.border-cokelat\/15{border-color:rgb(61 40 23 / 0.15)}.border-cokelat\/5{border-color:rgb(61 40 23 / 0.05)}.border-krem\/10{border-color:rgb(255 248 240 / 0.1)}.border-merah\/30{border-color:rgb(192 57 43 / 0.3)}.border-white\/25{border-color:rgb(255 255 255 / 0.25)}.border-merah{--tw-border-opacity:1;border-color:rgb(192 57 43 / var(--tw-border-opacity, 1))}.bg-cokelat{--tw-bg-opacity:1;background-color:rgb(61 40 23 / var(--tw-bg-opacity, 1))}.bg-cokelat\/5{background-color:rgb(61 40 23 / 0.05)}.bg-cokelat\/50{background-color:rgb(61 40 23 / 0.5)}.bg-hijau{--tw-bg-opacity:1;background-color:rgb(90 143 60 / var(--tw-bg-opacity, 1))}.bg-krem{--tw-bg-opacity:1;background-color:rgb(255 248 240 / var(--tw-bg-opacity, 1))}.bg-krem-dark{--tw-bg-opacity:1;background-color:rgb(251 237 224 / var(--tw-bg-opacity, 1))}.bg-kuning{--tw-bg-opacity:1;background-color:rgb(240 165 0 / var(--tw-bg-opacity, 1))}.bg-merah{--tw-bg-opacity:1;background-color:rgb(192 57 43 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-kuning{--tw-gradient-from:#F0A500 var(--tw-gradient-from-position);--tw-gradient-to:rgb(240 165 0 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-merah{--tw-gradient-from:#C0392B var(--tw-gradient-from-position);--tw-gradient-to:rgb(192 57 43 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-merah{--tw-gradient-to:rgb(192 57 43 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #C0392B var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-kuning-dark{--tw-gradient-to:#C98600 var(--tw-gradient-to-position)}.to-merah-dark{--tw-gradient-to:#96291E var(--tw-gradient-to-position)}.object-contain{object-fit:contain}.p-0{padding:0px}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-5{padding:1.25rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-16{padding-top:4rem;padding-bottom:4rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.py-6{padding-top:1.5rem;padding-bottom:1.5rem}.py-9{padding-top:2.25rem;padding-bottom:2.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.pb-14{padding-bottom:3.5rem}.pb-16{padding-bottom:4rem}.pl-11{padding-left:2.75rem}.pl-4{padding-left:1rem}.pr-4{padding-right:1rem}.pr-5{padding-right:1.25rem}.pt-5{padding-top:1.25rem}.pt-6{padding-top:1.5rem}.pt-8{padding-top:2rem}.pt-1{padding-top:0.25rem}.pt-1\.5{padding-top:0.375rem}.text-center{text-align:center}.text-right{text-align:right}.font-display{font-family:Fredoka, sans-serif}.font-mono{font-family:JetBrains Mono, monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.08\]{line-height:1.08}.leading-relaxed{line-height:1.625}.leading-none{line-height:1}.tracking-tight{letter-spacing:-0.025em}.tracking-widest{letter-spacing:0.1em}.text-cokelat{--tw-text-opacity:1;color:rgb(61 40 23 / var(--tw-text-opacity, 1))}.text-cokelat\/40{color:rgb(61 40 23 / 0.4)}.text-cokelat\/50{color:rgb(61 40 23 / 0.5)}.text-cokelat\/60{color:rgb(61 40 23 / 0.6)}.text-cokelat\/70{color:rgb(61 40 23 / 0.7)}.text-krem{--tw-text-opacity:1;color:rgb(255 248 240 / var(--tw-text-opacity, 1))}.text-krem\/20{color:rgb(255 248 240 / 0.2)}.text-krem\/40{color:rgb(255 248 240 / 0.4)}.text-krem\/60{color:rgb(255 248 240 / 0.6)}.text-krem\/80{color:rgb(255 248 240 / 0.8)}.text-krem\/85{color:rgb(255 248 240 / 0.85)}.text-kuning{--tw-text-opacity:1;color:rgb(240 165 0 / var(--tw-text-opacity, 1))}.text-merah{--tw-text-opacity:1;color:rgb(192 57 43 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-cokelat\/45{color:rgb(61 40 23 / 0.45)}.text-hijau{--tw-text-opacity:1;color:rgb(90 143 60 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-cokelat\/40::placeholder{color:rgb(61 40 23 / 0.4)}.opacity-70{opacity:0.7}.shadow-card{--tw-shadow:0 4px 0 rgba(61,40,23,0.08), 0 8px 20px -6px rgba(61,40,23,0.12);--tw-shadow-colored:0 4px 0 var(--tw-shadow-color), 0 8px 20px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cardHover{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:border-merah\/40:hover{border-color:rgb(192 57 43 / 0.4)}.hover\:bg-cokelat\/5:hover{background-color:rgb(61 40 23 / 0.05)}.hover\:bg-cokelat\/90:hover{background-color:rgb(61 40 23 / 0.9)}.hover\:bg-krem:hover{--tw-bg-opacity:1;background-color:rgb(255 248 240 / var(--tw-bg-opacity, 1))}.hover\:bg-merah-dark:hover{--tw-bg-opacity:1;background-color:rgb(150 41 30 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:text-krem\/40:hover{color:rgb(255 248 240 / 0.4)}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:shadow-cardHover:hover{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.hover\:brightness-105:hover{--tw-brightness:brightness(1.05);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.focus\:border-merah:focus{--tw-border-opacity:1;border-color:rgb(192 57 43 / var(--tw-border-opacity, 1))}.focus\:shadow-cardHover:focus{--tw-shadow:0 6px 0 rgba(61,40,23,0.1), 0 14px 28px -8px rgba(61,40,23,0.18);--tw-shadow-colored:0 6px 0 var(--tw-shadow-color), 0 14px 28px -8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.active\:scale-95:active{--tw-scale-x:.95;--tw-scale-y:.95;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.active\:scale-\[0\.98\]:active{--tw-scale-x:0.98;--tw-scale-y:0.98;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:mb-12{margin-bottom:3rem}.sm\:mb-14{margin-bottom:3.5rem}.sm\:mb-8{margin-bottom:2rem}.sm\:block{display:block}.sm\:inline-block{display:inline-block}.sm\:inline{display:inline}.sm\:inline-flex{display:inline-flex}.sm\:max-h-\[90vh\]{max-height:90vh}.sm\:min-h-0{min-height:0px}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:justify-between{justify-content:space-between}.sm\:gap-6{gap:1.5rem}.sm\:rounded-3xl{border-radius:1.5rem}.sm\:p-6{padding:1.5rem}.sm\:p-8{padding:2rem}.sm\:p-5{padding:1.25rem}.sm\:px-10{padding-left:2.5rem;padding-right:2.5rem}.sm\:px-7{padding-left:1.75rem;padding-right:1.75rem}.sm\:px-8{padding-left:2rem;padding-right:2rem}.sm\:py-12{padding-top:3rem;padding-bottom:3rem}.sm\:py-20{padding-top:5rem;padding-bottom:5rem}.sm\:pb-20{padding-bottom:5rem}.sm\:pt-10{padding-top:2.5rem}.sm\:pt-6{padding-top:1.5rem}.sm\:text-2xl{font-size:1.5rem;line-height:2rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:gap-10{gap:2.5rem}}
+</style>
+</head>
 <body class="text-cokelat antialiased">
 
 <!-- ============================ 2. MARKUP - HEADER / HERO ============================ -->
@@ -158,7 +209,7 @@
       <span id="product-count" class="hidden sm:inline-block font-mono text-xs text-cokelat/50 whitespace-nowrap">7 produk</span>
     </div>
 
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" aria-live="polite"><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6" aria-live="polite"><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🍪</span>
       <div>
@@ -169,9 +220,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 85.000</option><option value="1">500gr — Rp 45.000</option><option value="2">250gr — Rp 23.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -189,7 +250,7 @@
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🧈</span>
       <div>
@@ -200,9 +261,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 95.000</option><option value="1">500gr — Rp 50.000</option><option value="2">250gr — Rp 25.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -220,7 +291,7 @@
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🥜</span>
       <div>
@@ -231,9 +302,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 85.000</option><option value="1">500gr — Rp 45.000</option><option value="2">250gr — Rp 23.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -245,13 +326,13 @@
 
     <div class="mt-auto flex items-center justify-between mb-4">
       <span class="text-xs text-cokelat/50">Subtotal</span>
-      <span class="subtotal-label font-mono text-base font-semibold text-merah">Rp 85.000</span>
+      <span class="subtotal-label font-mono text-base font-semibold text-merah">Rp 95.000</span>
     </div>
 
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🌯</span>
       <div>
@@ -262,9 +343,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 50.000</option><option value="1">500gr — Rp 25.000</option><option value="2">250gr — Rp 13.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -282,7 +373,7 @@
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🔥</span>
       <div>
@@ -293,9 +384,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 85.000</option><option value="1">500gr — Rp 45.000</option><option value="2">250gr — Rp 23.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white chip-selected-pulse">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors hover:border-merah/40 border-cokelat/15 bg-krem text-cokelat">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors hover:border-merah/40 border-cokelat/15 bg-krem text-cokelat">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -307,13 +408,13 @@
 
     <div class="mt-auto flex items-center justify-between mb-4">
       <span class="text-xs text-cokelat/50">Subtotal</span>
-      <span class="subtotal-label font-mono text-base font-semibold text-merah">Rp 85.000</span>
+      <span class="subtotal-label font-mono text-base font-semibold text-merah subtotal-bump">Rp 85.000</span>
     </div>
 
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🍟</span>
       <div>
@@ -324,9 +425,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 85.000</option><option value="1">500gr — Rp 45.000</option><option value="2">250gr — Rp 23.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -344,7 +455,7 @@
     <button type="button" class="btn-order w-full bg-hijau text-white font-semibold text-sm rounded-2xl py-3 hover:brightness-105 active:scale-[0.98] transition flex items-center justify-center gap-2">
       <span aria-hidden="true">📲</span> Pesan via WA
     </button>
-  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in">
+  </article><article class="snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger in-view">
     <div class="flex items-start gap-3 mb-4">
       <span class="text-3xl leading-none" aria-hidden="true">🧅</span>
       <div>
@@ -355,9 +466,19 @@
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        <option value="0">1000gr — Rp 85.000</option><option value="1">500gr — Rp 45.000</option><option value="2">250gr — Rp 23.000</option>
-      </select>
+      <div class="variant-chip-group flex flex-wrap gap-2">
+      <button type="button" data-variant-index="0" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-merah bg-merah text-white">
+        1000gr
+      </button>
+    
+      <button type="button" data-variant-index="1" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        500gr
+      </button>
+    
+      <button type="button" data-variant-index="2" class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors border-cokelat/15 bg-krem text-cokelat hover:border-merah/40">
+        250gr
+      </button>
+    </div>
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -393,7 +514,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-start">
 
         <!-- Kolom kiri: Cara pemesanan (langkah bernomor karena memang urutan proses nyata) -->
-        <ol id="steps-list" class="space-y-4"><li class="flex gap-4 bg-white rounded-2xl shadow-card p-4 sm:p-5">
+        <ol id="steps-list" class="space-y-4 scroll-reveal in-view"><li class="flex gap-4 bg-white rounded-2xl shadow-card p-4 sm:p-5">
       <span class="shrink-0 grid place-items-center w-9 h-9 rounded-full bg-merah text-white font-display font-semibold text-sm">1</span>
       <p class="text-sm sm:text-base leading-relaxed pt-1.5">Pilih jajanan yang kamu mau di katalog</p>
     </li><li class="flex gap-4 bg-white rounded-2xl shadow-card p-4 sm:p-5">
@@ -411,7 +532,7 @@
     </li></ol>
 
         <!-- Kolom kanan: Informasi pembayaran & QRIS -->
-        <div class="bg-white rounded-3xl shadow-card p-6 sm:p-8">
+        <div class="bg-white rounded-3xl shadow-card p-6 sm:p-8 scroll-reveal in-view">
           <h3 class="font-display text-lg font-semibold mb-1">Bayar Pakai QRIS</h3>
           <p class="text-cokelat/60 text-sm mb-5">Scan QRIS untuk pembayaran setelah mengonfirmasi total pesanan di WhatsApp.</p>
 
@@ -438,7 +559,7 @@
 
   <!-- Banner Request Jajanan Lain -->
   <section class="max-w-6xl mx-auto px-5 sm:px-8 py-14 sm:py-20">
-    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-kuning to-kuning-dark px-6 sm:px-10 py-9 sm:py-12 text-center shadow-card">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-kuning to-kuning-dark px-6 sm:px-10 py-9 sm:py-12 text-center shadow-card scroll-reveal in-view">
       <h2 class="font-display text-xl sm:text-2xl font-semibold text-cokelat mb-2">Ga ada jajanan favoritmu?</h2>
       <p class="text-cokelat/70 text-sm sm:text-base mb-6 max-w-lg mx-auto">Kasih tau Sobat, siapa tau bisa kita siapin buat kamu di batch berikutnya.</p>
       <button id="btn-request-banner" type="button" class="inline-flex items-center gap-2 bg-cokelat text-krem font-semibold text-sm sm:text-base rounded-full px-6 py-3 hover:bg-cokelat/90 transition-colors">
@@ -688,6 +809,28 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.add('hidden'), 2600);
 }
 
+/** ANIMASI SCROLL: satu IntersectionObserver global yang menambahkan class "in-view"
+ *  begitu sebuah elemen ".scroll-reveal" masuk ke area pandang layar saat discroll.
+ *  unobserve dipanggil setelah animasi jalan sekali, supaya tidak berulang-ulang
+ *  setiap kali elemen keluar-masuk viewport (cukup animasi sekali saat pertama muncul). */
+const scrollRevealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      scrollRevealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+/** Mendaftarkan setiap elemen ".scroll-reveal" yang belum diamati ke observer di atas.
+ *  Dipanggil ulang setiap kali ada elemen baru dirender (misalnya kartu produk baru
+ *  setelah filter pencarian berubah), supaya animasi tetap berjalan untuk elemen baru. */
+function observeScrollReveal(container = document) {
+  container.querySelectorAll('.scroll-reveal:not(.in-view)').forEach(el => {
+    scrollRevealObserver.observe(el);
+  });
+}
+
 
 /* ==================================================================
    9. SCRIPT - RENDER KATALOG (customer view)
@@ -714,16 +857,35 @@ function renderCatalog() {
   filtered.forEach(product => {
     grid.appendChild(buildProductCard(product));
   });
+
+  observeScrollReveal(grid);
 }
 
 /** Membangun satu elemen kartu produk (DOM) lengkap dengan selector gramasi & qty. */
 function buildProductCard(product) {
   const card = document.createElement('article');
-  card.className = 'snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in';
+  card.className = 'snack-card bg-white rounded-3xl shadow-card hover:shadow-cardHover transition-shadow p-5 sm:p-6 flex flex-col fade-in scroll-reveal scroll-reveal-stagger';
+
+  // Varian sedikit (<=3) ditampilkan sebagai tombol pilihan (chip) yang langsung terlihat
+  // dan diklik tanpa membuka dropdown. Varian banyak (>3) tetap pakai <select> supaya
+  // kartu tidak penuh oleh tombol.
+  const useChipSelector = product.variants.length <= 3;
 
   const variantOptions = product.variants
     .map((v, i) => `<option value="${i}">${v.gram} — ${formatRupiah(v.price)}</option>`)
     .join('');
+
+  const variantChips = product.variants
+    .map((v, i) => `
+      <button type="button" data-variant-index="${i}"
+        class="variant-chip flex-1 min-w-[4.5rem] px-2 py-2 rounded-xl border text-xs font-semibold text-center transition-colors ${i === 0 ? 'border-merah bg-merah text-white' : 'border-cokelat/15 bg-krem text-cokelat hover:border-merah/40'}">
+        ${v.gram}
+      </button>
+    `).join('');
+
+  const variantSelectorHtml = useChipSelector
+    ? `<div class="variant-chip-group flex flex-wrap gap-2">${variantChips}</div>`
+    : `<select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">${variantOptions}</select>`;
 
   card.innerHTML = `
     <div class="flex items-start gap-3 mb-4">
@@ -736,9 +898,7 @@ function buildProductCard(product) {
 
     <div class="space-y-3 mb-5">
       <label class="block text-xs font-semibold text-cokelat/60">Gramasi</label>
-      <select class="variant-select w-full px-3.5 py-2.5 rounded-xl border border-cokelat/15 focus:border-merah outline-none text-sm font-medium bg-krem">
-        ${variantOptions}
-      </select>
+      ${variantSelectorHtml}
 
       <label class="block text-xs font-semibold text-cokelat/60 pt-1">Jumlah</label>
       <div class="flex items-center gap-2">
@@ -758,21 +918,54 @@ function buildProductCard(product) {
     </button>
   `;
 
+  // Menyimpan indeks varian terpilih di satu tempat, terlepas dari apakah UI-nya
+  // chip atau dropdown, supaya logic di bawah (updateSubtotal, order) tetap seragam.
+  let selectedVariantIndex = 0;
+
   const variantSelect = card.querySelector('.variant-select');
+  const chipButtons = card.querySelectorAll('.variant-chip');
   const qtyInput = card.querySelector('.qty-input');
   const qtyMinus = card.querySelector('.qty-minus');
   const qtyPlus = card.querySelector('.qty-plus');
   const subtotalLabel = card.querySelector('.subtotal-label');
   const orderBtn = card.querySelector('.btn-order');
 
-  /** Menghitung ulang & menampilkan subtotal berdasarkan varian + qty terpilih. */
-  function updateSubtotal() {
-    const variant = product.variants[Number(variantSelect.value)];
+  /** Menghitung ulang & menampilkan subtotal berdasarkan varian + qty terpilih.
+   *  Parameter animate mengontrol apakah efek "bump" ditampilkan — dinonaktifkan
+   *  saat pemanggilan inisialisasi pertama supaya kartu tidak "berkedip" saat baru dimuat. */
+  function updateSubtotal(animate = true) {
+    const variant = product.variants[selectedVariantIndex];
     const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
     subtotalLabel.textContent = formatRupiah(variant.price * qty);
+
+    if (animate) {
+      subtotalLabel.classList.remove('subtotal-bump');
+      // Memaksa reflow supaya animasi CSS bisa di-restart walau class-nya sama seperti sebelumnya
+      void subtotalLabel.offsetWidth;
+      subtotalLabel.classList.add('subtotal-bump');
+    }
   }
 
-  variantSelect.addEventListener('change', updateSubtotal);
+  if (useChipSelector) {
+    chipButtons.forEach(chip => {
+      chip.addEventListener('click', () => {
+        selectedVariantIndex = Number(chip.dataset.variantIndex);
+        chipButtons.forEach(c => {
+          c.classList.remove('border-merah', 'bg-merah', 'text-white', 'chip-selected-pulse');
+          c.classList.add('border-cokelat/15', 'bg-krem', 'text-cokelat');
+        });
+        chip.classList.remove('border-cokelat/15', 'bg-krem', 'text-cokelat');
+        chip.classList.add('border-merah', 'bg-merah', 'text-white', 'chip-selected-pulse');
+        updateSubtotal();
+      });
+    });
+  } else {
+    variantSelect.addEventListener('change', () => {
+      selectedVariantIndex = Number(variantSelect.value);
+      updateSubtotal();
+    });
+  }
+
   qtyInput.addEventListener('input', () => {
     if (qtyInput.value === '' ) return;
     qtyInput.value = Math.max(1, parseInt(qtyInput.value, 10) || 1);
@@ -788,12 +981,12 @@ function buildProductCard(product) {
   });
 
   orderBtn.addEventListener('click', () => {
-    const variant = product.variants[Number(variantSelect.value)];
+    const variant = product.variants[selectedVariantIndex];
     const qty = Math.max(1, parseInt(qtyInput.value, 10) || 1);
     sendOrderToWhatsApp(product.name, variant.gram, qty);
   });
 
-  updateSubtotal();
+  updateSubtotal(false);
   return card;
 }
 
@@ -970,6 +1163,7 @@ async function initApp() {
   renderSteps();
   renderQrisImage();
   renderFooterContact();
+  observeScrollReveal();
 
   bindPublicEventListeners();
   
